@@ -78,6 +78,12 @@
                     @include tablet {
                         @include fontsize(14px);
                     }
+
+                    @include mobile {
+                        @include fontsize(12px);
+                        padding-right: 10px;
+                        width: 75px;
+                    }
                 }
 
                 .accordion-button {                
@@ -173,6 +179,10 @@
                         width: 140px;                
                         background-color: $color-bluebutton;
                         border-radius: 5px;
+
+                        @include mobile{
+                            width: 120px; 
+                        }
                         
                         &:not(:last-child){
                             margin-right: 40px;
@@ -222,7 +232,7 @@
                 margin-right: 80px;
 
                 @include tablet {
-                    margin-right: 30px;
+                    margin-right: 8px;
                 }
 
                 li{
