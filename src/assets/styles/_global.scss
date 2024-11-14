@@ -1,0 +1,55 @@
+@import './variables';
+
+html{
+    font-size: 100%;
+}
+
+body {
+    font-family: $font-primary;
+    @include fontsize(16px);
+    line-height: $line-height-100;
+    font-weight: $font-weight-400;
+    color: $color-black;
+    background-color: $color-darkbluebg;
+}
+
+.accordion {
+    --bs-accordion-bg: transparent;
+    --bs-accordion-border-color: transparent;
+
+    .accordion-item {
+        .accordion-header {            
+            .accordion-button {
+                border-radius: 0;
+                color: $color-white;                
+                &:focus{
+                    box-shadow: none;                    
+                    border-radius: 0;
+                    color: $color-white;
+                }
+                &:not(.collased){
+                    background-color: transparent;
+                    box-shadow: none;
+                }
+            }
+        }
+    }
+}
+
+.button-fill{
+    padding: 5px 20px;
+    border: solid 1px transparent;
+    background-color: $color-bluebutton;
+    border-radius: 3px;
+    color: $color-white;
+}
+
+.button-notfill{
+    padding: 5px 20px;
+    border: solid 1px $color-bluebutton;
+    border-radius: 3px;
+}
+
+.chart-heading{
+    
+}

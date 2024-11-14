@@ -1,0 +1,390 @@
+.assessment-wrapper{
+    margin-top: 30px;
+
+    .accordion-assessment {
+        .accordion-item {
+            .accordion-header {
+                background-color: $color-darkbluebg;
+                border: solid 2px $color-purplebg;
+                border-radius: 10px;
+
+                .accordion-button {
+                    padding: 10px;
+
+                    &.collapsed {
+                        .icon-assessment {
+                            transform: rotate(180deg);
+                        }
+
+                        .accordion-btn-list{
+                            display: block;
+
+                            @include mobile {
+                                display: none;
+                            }
+                        }
+                    }
+
+                    .assesment-btn {
+                        @include fontsize(18px);
+                        border: solid 1px $color-purplebg;
+                        border-radius: 5px;                    
+                        width: auto;
+                        margin: 0;
+                        padding: 10px;
+                        background-color: $color-purplebg40;
+
+                        @include tablet {
+                            @include fontsize(14px);
+                        }
+
+                        @include mobile {
+                            width: 100%;
+                            display: flex;
+                            justify-content: space-between;
+                        }
+
+                        .icon {
+                            margin-left: 10px;
+                            @include transition(all ease 0.3s);
+                        }
+                    }             
+                    
+
+                    &::after {
+                        content: none;
+                    }
+                    
+                    .accordion-btn-list {
+                        margin-bottom: 0;
+                        position: absolute;
+                        right: 30px;
+                        top: 16px;
+                        display: none;
+            
+                        li {
+                            &:not(:last-child) {
+                                margin-right: 126px;
+
+                                @include tablet {
+                                    margin-right: 20px;
+                                }
+                            }
+                        }
+
+                        .progress-wrapper{
+                            .progress-icon{
+                                margin-right: 10px;                                
+                            }
+                            .progess-count{
+                                .progress-percent{
+                                    @include fontsize(18px);
+                                    font-weight: $font-weight-500;
+
+                                    @include tablet {
+                                        @include fontsize(14px);
+                                    }
+                                }
+                                .progress-text{
+                                    @include fontsize(12px);
+                                    font-weight: $font-weight-400;
+
+                                    @include tablet {
+                                        @include fontsize(10px);
+                                    }
+                                }
+                            }
+                        }
+
+                    }
+                }
+            }
+        }
+
+        .accordion-assessment-body{
+            margin-top: 5px;
+            border: solid 2px $color-purplebg;
+            border-radius: 10px;
+
+            .assessment-tab{
+                padding-bottom: 20px;
+                border-bottom: solid 1px $color-lightblueline;
+
+                .nav-item {
+                    &:not(:last-child){
+                        margin-right: 21px;
+
+                        @include mobile {
+                            margin-right: 10px;
+                        }
+                    }
+
+                    .nav-link{
+                        @include fontsize(14px);
+                        color: $color-lightbluebg;
+                        padding: 8px 20px;
+                        border: solid 1px $color-lightbluebg;
+                        height: 36px;
+
+                        @include mobile {
+                            @include fontsize(12px);
+                            padding: 8px 10px;
+                        }
+
+                        &.active{
+                            color: $color-white;
+                            background-color: $color-bluebutton;
+                            border: solid 1px $color-bluebutton;
+
+                            .icon-cyber{
+                                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='17' height='20' viewBox='0 0 17 20' fill='none'%3E%3Cpath d='M7.93293 2.50664C5.97396 1.63929 2.7838 0.181671 2.75954 0.169624C1.81341 -0.245979 1.45558 0.229857 1.43739 0.25395C1.34641 0.40453 1.32215 0.555111 1.36461 0.711715C1.49197 1.15141 2.10453 1.46462 2.12879 1.47667C5.92544 3.77152 8.27863 6.6446 8.37567 6.76506C9.85551 8.38531 9.7706 10.4754 9.76454 10.5597C9.76454 11.2403 9.65537 12.2583 9.54014 13.1919C9.54014 13.2099 9.56439 13.2159 9.57046 13.1919L10.5469 9.68031C11.5355 4.86775 8.11488 2.62108 7.93293 2.50062V2.50664Z' fill='%23FFF'/%3E%3Cpath d='M8.52123 19.9981C8.55155 19.9981 9.25508 20.1005 9.9101 18.7995C9.93436 18.7573 12.1844 14.5832 13.9372 9.75259C13.9918 9.62008 15.2776 6.52414 12.0874 4.71716C12.0692 4.70512 10.6803 3.86789 9.10953 3.07282C9.0792 3.06078 9.05494 3.09089 9.07314 3.11498C9.3218 3.37398 9.58865 3.68719 9.84338 4.07268C10.5894 5.18698 11.3596 7.07225 10.8138 9.74656L8.33928 18.6308C8.25437 18.8537 8.07849 19.4982 8.25437 19.8174C8.30896 19.9138 8.39993 19.974 8.52123 19.9981Z' fill='%23FFF'/%3E%3Cpath d='M8.49697 0.416577C7.51445 0.416577 6.57438 0.585227 5.70103 0.886389C6.48948 1.24176 7.30218 1.60315 7.96932 1.90432H7.97538C10.0799 2.86803 12.3603 4.24133 12.3846 4.25338C15.975 6.28321 14.4709 9.89112 14.4588 9.92726C13.5127 12.5353 12.427 14.9627 11.5901 16.7275C14.756 15.4988 17 12.439 17 8.86115C17 4.19917 13.1912 0.416577 8.49697 0.416577Z' fill='%23FFF'/%3E%3Cpath d='M8.49697 14.5953C5.31288 14.5953 2.72922 12.0294 2.72922 8.86717C2.72922 5.70498 3.71174 5.193 5.20977 4.16303C4.4274 3.50047 3.49946 2.84996 3.06885 2.56085C3.0264 2.53073 2.98395 2.50664 2.94756 2.47652C1.14021 4.02449 0 6.31332 0 8.86717C0 13.4689 3.69961 17.2033 8.30895 17.3117C8.68498 16.0228 8.91545 14.794 8.95184 14.5832C8.80628 14.5953 8.65466 14.6013 8.50303 14.6013L8.49697 14.5953Z' fill='%23FFF'/%3E%3C/svg%3E");
+                            }
+
+                            .icon-summary{
+                                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='19' height='18' viewBox='0 0 19 18' fill='none'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M13.5135 1.95042C14.9878 1.62763 16.3133 1.69686 17.1252 1.80173C17.1511 1.80507 17.1787 1.81651 17.2085 1.85402C17.2414 1.89537 17.2727 1.96678 17.2727 2.06194V13.3424C17.2727 13.5883 17.0601 13.779 16.839 13.7718C15.7866 13.7374 14.2402 13.7687 12.7811 14.1186C11.7786 14.359 10.9769 14.7605 10.3636 15.1732V3.82768C10.3636 3.62177 10.411 3.51737 10.4452 3.47341C10.5522 3.33657 10.8795 3.04432 11.443 2.72876C11.9871 2.4241 12.6955 2.12953 13.5135 1.95042ZM17.3481 0.101793C16.407 -0.0197756 14.8691 -0.10189 13.1414 0.276392C12.1439 0.494809 11.2757 0.854122 10.5943 1.23573C9.93225 1.60643 9.38505 2.03281 9.08027 2.42299C8.72946 2.87201 8.63636 3.39911 8.63636 3.82768V17.1428C8.63636 17.5209 8.88595 17.8542 9.25058 17.9634C9.61348 18.072 10.0051 17.9331 10.2166 17.6214L10.2181 17.619L10.2172 17.6204L10.2166 17.6214C10.2166 17.6214 10.2177 17.6197 10.2187 17.6182C10.2224 17.613 10.2302 17.6022 10.242 17.5866C10.2655 17.5554 10.3053 17.5049 10.3614 17.44C10.4739 17.31 10.6511 17.1239 10.8959 16.9198C11.3848 16.512 12.1383 16.0363 13.1869 15.7849C14.4269 15.4875 15.7958 15.4529 16.7821 15.4851C17.9737 15.5241 19 14.5624 19 13.3424V2.06194C19 1.15655 18.3908 0.236458 17.3481 0.101793Z' fill='white'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M5.48647 1.95042C4.01221 1.62763 2.68668 1.69686 1.87475 1.80173C1.84891 1.80507 1.82128 1.81651 1.7915 1.85402C1.75867 1.89537 1.72727 1.96678 1.72727 2.06194V13.3424C1.72727 13.5883 1.93989 13.779 2.161 13.7718C3.21338 13.7374 4.75987 13.7687 6.21885 14.1186C7.22139 14.359 8.0231 14.7605 8.63636 15.1732V3.82768C8.63636 3.62177 8.58904 3.51737 8.55475 3.47341C8.44783 3.33657 8.12051 3.04432 7.55695 2.72876C7.01289 2.4241 6.3045 2.12953 5.48647 1.95042ZM1.65183 0.101793C2.59299 -0.0197756 4.13087 -0.10189 5.85857 0.276392C6.85615 0.494809 7.72426 0.854122 8.40569 1.23573C9.06775 1.60643 9.61495 2.03281 9.91973 2.42299C10.2705 2.87201 10.3636 3.39911 10.3636 3.82768V17.1428C10.3636 17.5209 10.114 17.8542 9.74942 17.9634C9.38652 18.072 8.99486 17.9331 8.78344 17.6214L8.78189 17.619L8.78284 17.6204L8.78344 17.6214C8.78344 17.6214 8.78232 17.6197 8.78128 17.6182C8.77757 17.613 8.7698 17.6022 8.75805 17.5866C8.73447 17.5554 8.69475 17.5049 8.63861 17.44C8.52608 17.31 8.34886 17.1239 8.1041 16.9198C7.61519 16.512 6.86169 16.0363 5.81318 15.7849C4.57313 15.4875 3.20419 15.4529 2.21788 15.4851C1.02629 15.5241 0 14.5624 0 13.3424V2.06194C0 1.15655 0.609235 0.236458 1.65183 0.101793Z' fill='white'/%3E%3C/svg%3E");
+                            }
+
+                        }
+                    }
+                }
+            }
+            
+            .chart-grid{
+                margin-top: 30px;
+                display: grid;
+                grid-template-columns: repeat(2,1fr);
+                column-gap: 20px;
+                row-gap: 20px;
+
+                @include tablet {
+                    grid-template-columns: repeat(1,1fr);
+                }
+
+                .card{
+                    border: solid 1px $color-lightbluebg;
+                    .card-header{
+                        background-color: $color-lightbluebg;
+                        color: $color-white;
+                    }
+
+                    .card-body{
+                        background-color: $color-lightdarkbluebg;
+                        height: 200px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+                }
+                
+            }
+        }
+    }
+}
+
+.single-chat-interface {
+    position: relative;
+    margin-top: 15px;
+    background-color: $color-darkbluebg;
+    border-radius: 10px;
+    height: 435px;
+
+    .single-chat-msgs-list {
+        padding: 10px;
+        height: 370px;
+        overflow-y: auto;
+
+        .single-chat-box {
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 0;
+
+            &.right-chat {
+                .single-chat-box-text {
+                    margin-left: 20px;
+                    margin-right: 0;
+                    border-top-left-radius: 10px;
+                    border-bottom-left-radius: 10px;
+                    border-top-right-radius: 10px;
+                    border-bottom-right-radius: 0;
+                }
+
+                .single-img {
+                    margin-left: 10px;
+
+                    img {
+                        @include widthheight(58px, 58px);
+                        border-radius: 50%;
+                        border: solid 1px $color-purplebg;
+
+                        @include tablet {
+                            @include widthheight(40px, 40px);
+                        }
+
+                        @include mobile {
+                            @include widthheight(30px, 30px);
+                        }
+                    }
+                }
+            }
+
+            &.blue {
+                .single-img {
+                    @include widthheight(58px, 58px);
+                    border-radius: 50%;
+                    border: solid 1px $color-purplebg;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    margin-right: 10px;
+
+                    @include tablet {
+                        @include widthheight(40px, 40px);
+                    }
+
+                    @include mobile {
+                        @include widthheight(30px, 30px);
+                    }
+
+                    img {
+                        @include widthheight(34px, 40px);
+                        object-fit: cover;
+
+                        @include tablet {
+                            @include widthheight(24px, 30px);
+                        }
+
+                        @include mobile {
+                            @include widthheight(14px, 20px);
+                        }
+                    }
+                }
+            }
+
+            .single-chat-box-text {
+                color: $color-white;
+                @include fontsize(14px);
+                font-weight: $font-weight-400;
+                background-color: $color-chatblue;
+                // width: 190px;
+                width: auto;
+                padding: 18px 10px;
+                border-top-left-radius: 10px;
+                border-top-right-radius: 10px;
+                border-bottom-right-radius: 10px;
+                margin-right: 20px;
+                line-height: $line-height-140;
+
+                @include tablet {
+                    width: 70%;
+                    @include fontsize(12px);
+                }
+            }
+
+            .single-chat-box-time {
+                margin-bottom: auto;
+                width: 100px;
+
+                @include mobile {
+                    width: 10px;
+                }
+
+                ul {
+                    li {
+                        &:not(:last-child) {
+                            margin-right: 10px;
+
+                            @include mobile {
+                                margin-right: 0;
+                                margin-top: 5px;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .single-chat-msg-tick {
+                position: absolute;
+                z-index: 1;
+                right: 5px;
+                bottom: -3px;
+            }
+        }
+    }
+
+    .single-chat-msg-input {
+        position: absolute;
+        bottom: 0;
+        left: 20px;
+        right: 20px;
+
+        .single-chat-msg-input-group {
+            background-color: $color-chatblue;
+            border-radius: 10px;
+            height: 64px;
+            display: flex;
+            align-items: center;
+            margin-top: 40px;
+
+            @include tablet {
+                height: 50px;
+            }
+
+            @include mobile {
+                height: 40px;
+            }
+
+            i {
+                margin-left: 15px;
+
+                @include mobile {
+                    margin-left: 6px;
+                }
+            }
+
+            input, input:focus {
+                background-color: transparent;
+                border: 0;
+                box-shadow: none;
+                color: $color-white;
+
+                @include mobile {
+                    @include fontsize(12px);
+                }
+            }
+
+            input {
+                &::placeholder {
+                    color: $color-white;
+                }
+            }
+        }
+
+        .chat-btn {
+            @include fontsize(20px);
+            font-weight: $font-weight-500;
+            background-color: $color-greenbutton;
+            height: 64px;
+            width: 200px;
+            border-top-left-radius: 10px !important;
+            border-bottom-left-radius: 10px !important;
+
+            @include tablet {
+                @include fontsize(14px);
+                height: 50px;
+                width: 100px;
+                border-top-left-radius: 6px !important;
+                border-bottom-left-radius: 6px !important;
+            }
+
+            @include mobile {
+                @include fontsize(14px);
+                height: 40px;
+                width: 60px;
+            }
+
+            &:hover {
+                background-color: $color-greenbutton;
+            }
+        }
+    }
+}

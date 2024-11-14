@@ -1,0 +1,279 @@
+.security-wrapper{
+
+    .security-tabs-wrapper{
+        margin: 40px 0;
+        .nav-pills{
+            .nav-item{                   
+
+                &:not(:last-child){
+                    margin-right: 35px;
+
+                    @include tablet{
+                        margin-right: 20px;
+                    }
+                }
+            
+                .nav-link{  
+                    height: 35px;
+                    display: flex;
+                    align-items: center;  
+                    border-radius: 20px;  
+                    background-color: $color-lightdarkbluebg;  
+                    color: $color-white;     
+                    
+                    &.active{
+                        background-color: $color-chatblue;
+                    }                    
+
+                    .navlink-tabs-div{                        
+                        .custom-icon{
+                            position: relative;
+                            top:2px;
+                        }
+    
+                        .icon-size{
+                            height: 25px;
+                            width: 25px;                                                       
+                        }
+
+                        .security-tabs-text{                            
+                            @include fontsize(10px);
+
+                            @include mobile{
+                                display: none;
+                            }
+
+                            &:not(:first-child){
+                                padding-left: 10px;
+                            }
+                        }
+
+                    }
+                    
+                }
+            }            
+        }
+    }
+
+    .security-accordion{
+        margin-top: 40px;
+
+        .accordion-item{
+            border: solid 1px $color-purplebg;
+            border-radius: 8px;
+            border-left: solid 10px $color-purplebg;
+            margin-bottom: 40px;
+
+            .accordion-header{
+                padding: 10px 0;
+
+                @include tablet {
+                    padding: 0;
+                }
+                        
+                .accordion-header-title{
+                    @include fontsize(20px);
+                    font-weight: $font-weight-300;
+
+                    @include tablet {
+                        @include fontsize(14px);
+                    }
+                }
+
+                .accordion-button {                
+                    &::after {
+                        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='36' viewBox='0 0 36 36' fill='none'%3E%3Ccircle cx='18' cy='18' r='17.5' fill='%2328204A' stroke='%23FFACED'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M13.9393 9.43934C14.5251 8.85355 15.4749 8.85355 16.0607 9.43934L22.8107 16.1893C23.3964 16.7751 23.3964 17.7249 22.8107 18.3107L16.0607 25.0607C15.4749 25.6464 14.5251 25.6464 13.9393 25.0607C13.3536 24.4749 13.3536 23.5251 13.9393 22.9393L19.6287 17.25L13.9393 11.5607C13.3536 10.9749 13.3536 10.0251 13.9393 9.43934Z' fill='%23FFACED'/%3E%3C/svg%3E");
+                        @include widthheight(36px,36px);
+                        background-size: 36px;
+
+                        @include tablet {
+                            @include widthheight(30px,30px);
+                            background-size: 30px;
+                        }
+                    }
+
+                    &:not(.collapsed) {                
+                        &::after{
+                            transform: rotate(90deg);
+                        }
+                    }
+
+                    .security-accordion-ul {
+                        .soc, .hardening {
+                            display: none;
+                        }
+
+                        .vulnerability {
+                            margin-right: 0;
+
+                            .security-inner-btn {
+                                @include mobile {
+                                    width: 120px;
+                                }
+
+                                i {
+                                    @include mobile {
+                                        margin-right: 5px;
+                                    }
+                                }
+                            }
+
+                            .security-accordion-title {
+                                @include mobile {
+                                    display: block;
+                                }
+                            }
+                        }
+                    }
+
+                    &.collapsed {
+                        .security-accordion-ul {
+                            .soc, .hardening {
+                                display: block;
+                            }
+
+                            .vulnerability {
+                                margin-right: 80px;
+
+                                @include tablet {
+                                    margin-right: 30px;
+                                }
+
+                                .security-inner-btn {
+                                    @include mobile {
+                                        width: 40px;
+                                    }
+                                }
+
+                                .security-accordion-title {
+                                    @include mobile {
+                                        display: none;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+                      
+            .accordion-body{            
+                color: $color-white;
+                @include fontsize(12px);
+                font-weight: $font-weight-300;
+                line-height: $line-height-140;
+                padding: 0;
+                margin: 0 20px 16px 20px;
+                border-top: solid 1px $color-lightbluebg;
+                padding-top: 20px;
+
+                .accordion-nav-wrapper{
+                    padding-bottom: 20px;
+
+                    .nav-item{
+                        width: 140px;                
+                        background-color: $color-bluebutton;
+                        border-radius: 5px;
+                        
+                        &:not(:last-child){
+                            margin-right: 40px;
+
+                            @include tablet {
+                                margin-right: 15px;
+                            }
+                        }
+        
+                        .tab-title{                    
+                            @include fontsize(15px);
+                            padding-right: 20px;
+
+                            @include mobile {
+                                @include fontsize(13px);
+                            }
+                        }
+                        
+                        .nav-link{
+                            border: solid 1px $color-lightbluebg;
+                            background-color: $color-darkbluebg;
+                            color:$color-lightbluebg;
+                            box-shadow: none;
+                            height: 33px;
+                            display: flex;
+                            align-items: center;
+        
+                            &.active{
+                                background-color: $color-bluebutton;
+                                color: $color-white;
+
+                                .icon-star{
+                                    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='19' height='18' viewBox='0 0 19 18' fill='none'%3E%3Cpath d='M8.70569 1.20196C8.94903 0.50659 9.07065 0.158914 9.25061 0.062552C9.40628 -0.0208507 9.5937 -0.0208507 9.74948 0.062552C9.92933 0.158914 10.0509 0.50659 10.2943 1.20196L11.9029 5.79907C11.9721 5.99699 12.0067 6.09594 12.0691 6.16963C12.1242 6.23473 12.1945 6.28547 12.2739 6.31742C12.3637 6.3536 12.4691 6.35573 12.68 6.36L17.5781 6.45916C18.319 6.47416 18.6895 6.48167 18.8374 6.62185C18.9653 6.74318 19.0232 6.92032 18.9915 7.09319C18.9549 7.29296 18.6596 7.51528 18.0691 7.96012L14.165 10.9004C13.9969 11.027 13.913 11.0903 13.8617 11.172C13.8164 11.2442 13.7896 11.3263 13.7835 11.4111C13.7766 11.5072 13.8071 11.6074 13.8682 11.808L15.2869 16.4664C15.5014 17.1711 15.6088 17.5234 15.5203 17.7063C15.4436 17.8647 15.292 17.9742 15.1166 17.9977C14.9141 18.0247 14.61 17.8145 14.0017 17.394L9.98031 14.6142C9.80719 14.4945 9.72068 14.4347 9.6266 14.4114C9.54346 14.3909 9.45653 14.3909 9.37349 14.4114C9.27941 14.4347 9.19279 14.4945 9.01967 14.6142L4.99836 17.394C4.39008 17.8145 4.08595 18.0247 3.88339 17.9977C3.70809 17.9742 3.55641 17.8647 3.47979 17.7063C3.39126 17.5234 3.49857 17.1711 3.71316 16.4664L5.13183 11.808C5.19291 11.6074 5.22344 11.5072 5.21657 11.4111C5.21049 11.3263 5.18365 11.2442 5.13835 11.172C5.08709 11.0903 5.00305 11.027 4.83498 10.9004L0.930988 7.96012C0.340455 7.51528 0.0451883 7.29296 0.00853486 7.09319C-0.0231992 6.92032 0.03474 6.74318 0.162696 6.62185C0.310529 6.48167 0.680983 6.47417 1.42188 6.45916L6.32002 6.36C6.53088 6.35573 6.63632 6.3536 6.72615 6.31742C6.8055 6.28547 6.8758 6.23473 6.93091 6.16963C6.99331 6.09594 7.02793 5.99699 7.09718 5.79907L8.70569 1.20196Z' fill='white'/%3E%3C/svg%3E");
+                                }
+                            }                        
+                        }
+                    }
+                }            
+            }
+        }
+        
+        .security-accordion-list{
+            width: 100%;        
+
+            .security-accordion-ul{
+                margin: 0px;
+                margin-right: 80px;
+
+                @include tablet {
+                    margin-right: 30px;
+                }
+
+                li{
+                    .security-inner-btn {
+                        height: 52px;
+                        width: 140px;
+                        border-radius: 8px; 
+                        background-color: $color-lightbluebutton;
+
+                        @include tablet {
+                            height: 40px;
+                            width: 120px;
+                        }
+
+                        @include mobile {
+                            width: 40px;
+                        }
+
+                        .icon-hardening {
+                            position: relative;
+                            top: 3px;
+                        }
+                    }                
+                    
+                    &:not(:last-child){
+                        margin-right: 80px;
+
+                        @include tablet {
+                            margin-right: 30px;
+                        }
+                    }
+
+                    i{
+                        margin-right: 10px;
+
+                        @include mobile {
+                            margin-right: 0;
+                        }
+                    }
+
+                    .security-accordion-title{
+                        @include fontsize(12px);
+
+                        @include mobile {
+                            display: none;
+                        }
+                    }
+                }            
+
+            }
+        }
+
+    }
+}
